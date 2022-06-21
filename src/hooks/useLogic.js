@@ -1,4 +1,3 @@
-
 import { createVendiaClient } from '@vendia/client';
 import { useState, useEffect} from 'react';
 
@@ -31,8 +30,6 @@ const [data, setData] = useState();
 const [length, setLength] = useState();
 const [isLoading, setLoading] = useState(true);
 
-
-
 useEffect(() => {
       const async = async () => {
       const response = await entities.employee.list();
@@ -54,8 +51,6 @@ useEffect(() => {
            vacation: data.items[i].vacation, work: data.items[i].work, id: data.items[i]._id,
       });
   }
-
-  
 
 return {entities, columns,  isLoading, rows}
 }

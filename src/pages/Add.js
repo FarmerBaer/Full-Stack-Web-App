@@ -6,7 +6,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import Button from '@mui/material/Button';
 import { useState } from 'react'
 import useLogic from '../hooks/useLogic';
-
+import Navb from './Navb'; 
       
 const genders = [
   {
@@ -33,7 +33,6 @@ const genders = [
 
 export default function Add() {
 
-  
 const {entities} = useLogic();
 
   const[gender, setGender] = useState('Woman');
@@ -49,6 +48,8 @@ const {entities} = useLogic();
   const[vacation, setVacation] = useState("");
   const[work, setWork] = useState("");
   //married
+  //smoke?
+  //drink?
 
 const handleChange = (event) => {
     setGender(event.target.value);
@@ -85,6 +86,7 @@ function handleSubmit(event) {
       noValidate
       autoComplete="off"
     >
+      {/* <Navb></Navb> */}
       <TextField
           id="outlined-select-gender"
           select
