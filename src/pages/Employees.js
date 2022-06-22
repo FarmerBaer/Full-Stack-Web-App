@@ -5,36 +5,10 @@ import Button from '@mui/material/Button';
 
 import { useState} from 'react';
 
-
 export default function Employees() {
 
 const {columns, isLoading, rows, entities} = useLogic();
 const [selectionModel, setSelectionModel] = useState([]);
-
-// const Testing = () => {
-//     if (isLoading) {
-//         return (
-//           <div >
-//             loading
-//         </div>
-//         )
-//       } else {
-//         return (
-//           <div style={{ height: 400, width: '100%' }}>
-//           <DataGrid
-//           rows={rows}
-//           columns={columns}
-//           checkboxSelection
-//           onSelectionModelChange={(newSelectionModel) => {
-//             setSelectionModel(newSelectionModel);
-//           }}
-//           selectionModel={selectionModel}
-//           {...rows}
-//             />
-//             <a href="/">add</a>
-//           </div>
-//     )}
-// }  
 
 function handleSubmit(event) {
   event.preventDefault();
