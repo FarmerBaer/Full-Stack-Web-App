@@ -7,6 +7,9 @@ import Button from '@mui/material/Button';
 import { useState } from 'react'
 import useLogic from '../hooks/useLogic';
 import Navb from './Navb'; 
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
       
 const genders = [
   {
@@ -30,6 +33,8 @@ const genders = [
   label: 'No Response',
 }
 ];
+
+const darkTheme = createTheme({ palette: { mode: 'dark' } });
 
 export default function Add() {
 
@@ -78,31 +83,48 @@ function handleSubmit(event) {
 }
 
   return (
-    <Box
-      component="form"
-      sx={{
-        '& > :not(style)': { m: 1, width: '25ch' },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      {/* <Navb></Navb> */}
-      <TextField
-          id="outlined-select-gender"
-          select
-          label="Gender"
-          onInput={ e=>setGender(e.target.value)}
-          value={gender}
-          onChange={handleChange}
-          helperText="Please select your gender"
-        >
-          {genders.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
-      <TextField value={name} onInput={ e=>setName(e.target.value)} id="outlined-basic" label="Name" variant="outlined" />
+    <Grid container spacing={2}>
+      {[darkTheme].map((theme, index) => (
+        <Grid item xs={12} key={index}>
+          <ThemeProvider theme={theme}>
+          <Box
+            sx={{
+              p: 2,
+              bgcolor: 'background.default',
+              display: 'grid',
+              gridTemplateColumns: { md: '1fr' },
+              gap: 4,
+              height: '5vh'
+            }}
+          >
+            <Navb></Navb>
+          </Box>
+            <Box
+              sx={{
+                p: 2,
+                bgcolor: 'background.default',
+                display: 'grid',
+                gridTemplateColumns: { md: '1fr 1fr' },
+                gap: 4,
+                height: '90vh'
+              }}
+            >
+              <TextField
+                      id="outlined-select-gender"
+                      select
+                      label="Gender"
+                      onInput={ e=>setGender(e.target.value)}
+                      value={gender}
+                      onChange={handleChange}
+                      helperText="Please select your gender"
+                    >
+                      {genders.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          {option.label}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+        <TextField value={name} onInput={ e=>setName(e.target.value)} id="outlined-basic" label="Name" variant="outlined" />
       <TextField value={age} onInput={ e=>setAge(e.target.value)} id="outlined-basic" label="Age" variant="outlined" />
       <TextField value={height} onInput={ e=>setHeight(e.target.value)} id="outlined-basic" label="Height" variant="outlined" InputProps={{
             endAdornment: <InputAdornment position="end">in</InputAdornment>, }} />
@@ -117,13 +139,28 @@ function handleSubmit(event) {
       <TextField value={respiration} onInput={ e=>setRespiration(e.target.value)} id="outlined-basic" label="Respiration" variant="outlined" InputProps={{
             endAdornment: <InputAdornment position="end">brpm</InputAdornment>, }}/>
       <TextField value={exercise} onInput={ e=>setExercise(e.target.value)} id="outlined-basic" label="Exercise" variant="outlined" InputProps={{
-            endAdornment: <InputAdornment position="end">hrs/d</InputAdornment>, }}/>
+            endAdornment: <InputAdornment position="end">hrs/wk</InputAdornment>, }}/>
       <TextField value={vacation} onInput={ e=>setVacation(e.target.value)} id="outlined-basic" label="Vacation" variant="outlined" InputProps={{
             endAdornment: <InputAdornment position="end">hrs</InputAdornment>, }} />
       <TextField value={work} onInput={ e=>setWork(e.target.value)} id="outlined-basic" label="Work" variant="outlined" InputProps={{
-            endAdornment: <InputAdornment position="end">hrs</InputAdornment>, }} />
-      <Button onClick={handleSubmit} variant="contained">Add</Button>
-      <a href="/employees">employees</a>
-    </Box>
+            endAdornment: <InputAdornment position="end">hrs/wk</InputAdornment>, }} />
+            </Box>
+            <Box
+            sx={{
+              p: 2,
+              bgcolor: 'background.default',
+              display: 'grid',
+              gridTemplateColumns: { md: '1fr' },
+              gap: 2,
+              height: '5vh'
+            }}
+          >
+            <Button sx={{
+              }}onClick={handleSubmit} variant="contained">Add</Button>
+          </Box>
+          </ThemeProvider>
+        </Grid>
+      ))}    
+    </Grid>
   );
 }

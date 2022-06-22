@@ -16,7 +16,7 @@ function App() {
       <Router>
         <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/agg" element={<Aggregate/>}/>
+        <Route path="/aggregate" element={<Aggregate/>}/>
         <Route path="/add" element={<Add/>}/>
         <Route path="/employees" element={<Employees/>}/>
         <Route path="/info" element={<Info/>}/>

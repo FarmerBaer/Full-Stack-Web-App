@@ -1,8 +1,9 @@
 import React from 'react'
+import Navb from './Navb'
 
 export default function Info() {
   return (
-    <div>Info</div>
+    <Navb></Navb>
   )
 }
 
