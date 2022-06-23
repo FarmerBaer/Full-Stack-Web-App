@@ -4,9 +4,9 @@ import { useState, useEffect} from 'react';
 const useLogic = () => {
   
 const client = createVendiaClient({
-    apiUrl: `https://f1l9he98b4.execute-api.us-west-2.amazonaws.com/graphql/`,
-    websocketUrl: `wss://s4bdcb0sre.execute-api.us-west-2.amazonaws.com/graphql`,
-    apiKey: 'HGZdrLkmMKyb5A7ReibmA9gie62sQ88cVTd12ZWGMWt7', // <---- API key
+    apiUrl: `https://pnl9ipk5b0.execute-api.us-west-2.amazonaws.com/graphql/`,
+    websocketUrl: `wss://qo25dfnlta.execute-api.us-west-2.amazonaws.com/graphql`,
+    apiKey: 'GK39HYXgFiu6NipjqUGTftMSu3jZRds3VBicyqFEzeH2', // <---- API key
 });
 const { entities } = client;
 
@@ -30,6 +30,7 @@ const [data, setData] = useState();
 const [length, setLength] = useState();
 const [isLoading, setLoading] = useState(true);
 
+
 useEffect(() => {
       const async = async () => {
       const response = await entities.employee.list();
@@ -41,6 +42,8 @@ useEffect(() => {
   }, []);
 
   var rows = [];
+  var avAge, avWeight, avHeight, avTemperature, avPulse, avPressure, avRespiration, avExercise, avVacation, avWork = 0;
+  var maleAge, maleWeight, maleHeight, maleTemperature, malePulse, malePressure, maleRespiration, maleExercise, maleVacation, maleWork = 0;
   for (var i = 0; i < length; i++) {
       rows.push({
            name: data.items[i].name, gender: data.items[i].gender, 
@@ -50,9 +53,26 @@ useEffect(() => {
            respiration: data.items[i].respiration, exercise: data.items[i].exercise, 
            vacation: data.items[i].vacation, work: data.items[i].work, id: data.items[i]._id,
       });
+
+      avAge =+ data.items[i].age; avWeight =+ data.items[i].weight; avHeight =+ data.items[i].height;
+      avTemperature =+ data.items[i].avTemperature; avPulse =+ data.items[i].avPulse; avPressure =+ data.items[i].avPressure;
+      avRespiration =+ data.items[i].avRespiration; avExercise =+ data.items[i].avExercise; avVacation =+ data.items[i].avVacation;
+      avWork =+ data.items[i].avWork;
+
+      if(data.items[i].gender == 'Man'){
+        maleAge =+ data.items[i].age; maleWeight =+ data.items[i].weight; maleHeight =+ data.items[i].height;
+        maleTemperature =+ data.items[i].maleTemperature; malePulse =+ data.items[i].avPulse; malePressure =+ data.items[i].avPressure;
+        maleRespiration =+ data.items[i].maleRespiration; maleExercise =+ data.items[i].avExercise; maleVacation =+ data.items[i].avVacation;
+        maleWork =+ data.items[i].avWork;
+      }
+
+      
   }
 
-return {entities, columns,  isLoading, rows}
+return {entities, columns, isLoading, rows, data, avAge, avWeight, 
+        avHeight, avTemperature, avPulse, avPressure, avRespiration, avExercise, avVacation, avWork,
+        maleAge, maleWeight, maleHeight, maleTemperature, malePulse, malePressure, maleRespiration, maleExercise, maleVacation, maleWork
+      }
 }
 
 export default useLogic;

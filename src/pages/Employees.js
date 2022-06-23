@@ -15,6 +15,15 @@ export default function Employees() {
 const {columns, isLoading, rows, entities} = useLogic();
 const [selectionModel, setSelectionModel] = useState([]);
 
+
+
+const Testing = () => {
+  let t21 = " Hour(s)";
+  return (
+    <div>{t21}</div>
+  )
+}
+
 function handleSubmit(event) {
   event.preventDefault();
   const remove = async() => {
@@ -52,6 +61,10 @@ return (
             }}
           >
           <DataGrid
+          sx={{
+            bgcolor: 'background.default',
+            height: '600px'
+          }}
           rows={rows}
           columns={columns}
           checkboxSelection
@@ -69,16 +82,15 @@ return (
               display: 'grid',
               gridTemplateColumns: { md: '1fr' },
               gap: 2,
-              height: '5vh',
+              height: '10vh',
             }}
           >
-            <Button sx={{
-              }}onClick={handleSubmit} variant="contained">Remove</Button>
+            <Button color="error" onClick={handleSubmit} variant="contained">Remove</Button>
           </Box>
           </Box>
         </ThemeProvider>
       </Grid>
-    ))}    
+    ))}
   </Grid>
   // <div style={{ height: '100vh'}}>
   //         <Navb></Navb>
