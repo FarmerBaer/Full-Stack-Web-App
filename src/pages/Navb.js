@@ -2,8 +2,6 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -17,7 +15,7 @@ export default function Navb() {
       <AppBar position="static">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
         <IconButton href="/" aria-label="delete" size="small">
-        <CottageIcon fontSize="inherit" style={{color: 'rgb(60, 179, 113)', maxWidth: '5vh', maxHeight: '5vh', minWidth: '5vh', minHeight: '5vh'}}/>
+        <CottageIcon fontSize="inherit" style={{color: 'rgb(200, 20, 100)', maxWidth: '5vh', maxHeight: '5vh', minWidth: '5vh', minHeight: '5vh'}}/>
       </IconButton>
         <IconButton href="/add" aria-label="delete" size="small">
         <AddIcon fontSize="inherit" style={{color: 'rgb(60, 179, 113)', maxWidth: '5vh', maxHeight: '5vh', minWidth: '5vh', minHeight: '5vh'}}/>

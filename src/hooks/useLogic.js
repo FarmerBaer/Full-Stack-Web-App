@@ -4,14 +4,15 @@ import { useState, useEffect} from 'react';
 const useLogic = () => {
   
 const client = createVendiaClient({
-    apiUrl: `https://pnl9ipk5b0.execute-api.us-west-2.amazonaws.com/graphql/`,
-    websocketUrl: `wss://qo25dfnlta.execute-api.us-west-2.amazonaws.com/graphql`,
-    apiKey: 'GK39HYXgFiu6NipjqUGTftMSu3jZRds3VBicyqFEzeH2', // <---- API key
+    apiUrl: `https://8vzgpfp6ya.execute-api.us-west-2.amazonaws.com/graphql/`,
+    websocketUrl: `wss://auduap6u4f.execute-api.us-west-2.amazonaws.com/graphql`,
+    apiKey: 'FXKJ6BPTPeyWznWziYe2879vU8CoHaj6TebHhAt478iJ', // <---- API key
 });
 const { entities } = client;
 
 const columns = [
-  {field: 'name', headerName: 'Name', width: 130 },
+  {field: 'fname', headerName: 'First Name', width: 130 },
+  {field: 'lname', headerName: 'Last Name', width: 130 },
   {field: 'gender', headerName: 'Gender', width: 105 },
   {field: 'age', headerName: 'Age', type: 'number', width: 105},
   {field: 'weight', headerName: 'Weight', type: 'number', width: 105},
@@ -23,7 +24,9 @@ const columns = [
   {field: 'exercise', headerName: 'Exercise', type: 'number', width: 105},
   {field: 'vacation', headerName: 'Vacation', type: 'number', width: 105},
   {field: 'work', headerName: 'Work', type: 'number', width: 105},
-  {field: 'id', headerName: 'ID', width: 350},
+  {field: 'smoking', headerName: 'Smoker', width: 105 },
+  {field: 'drinking', headerName: 'Drinker', width: 105 },
+  {field: 'id', headerName: 'ID', width: 350}
 ]; 
 
 const [data, setData] = useState();
@@ -37,6 +40,7 @@ useEffect(() => {
       setData(response);
       setLoading(false);
       setLength(response.items.length)
+      console.log(response);
     }
     async()
   }, []);
@@ -44,34 +48,54 @@ useEffect(() => {
   var rows = [];
   var avAge, avWeight, avHeight, avTemperature, avPulse, avPressure, avRespiration, avExercise, avVacation, avWork = 0;
   var maleAge, maleWeight, maleHeight, maleTemperature, malePulse, malePressure, maleRespiration, maleExercise, maleVacation, maleWork = 0;
+  var femaleAge, femaleWeight, femaleHeight, femaleTemperature, femalePulse, femalePressure, femaleRespiration, femaleExercise, femaleVacation, femaleWork = 0;
+  var otherAge, otherWeight, otherHeight, otherTemperature, otherPulse, otherPressure, otherRespiration, otherExercise, otherVacation, otherWork = 0;
+  
   for (var i = 0; i < length; i++) {
       rows.push({
-           name: data.items[i].name, gender: data.items[i].gender, 
+           fname: data.items[i].fname, lname: data.items[i].lname, gender: data.items[i].gender, 
            age: data.items[i].age, weight: data.items[i].weight, 
            height: data.items[i].height, temperature: data.items[i].temperature, 
            pulse: data.items[i].pulse, pressure: data.items[i].pressure, 
            respiration: data.items[i].respiration, exercise: data.items[i].exercise, 
-           vacation: data.items[i].vacation, work: data.items[i].work, id: data.items[i]._id,
+           vacation: data.items[i].vacation, work: data.items[i].work, id: data.items[i]._id, 
+           smoking: data.items[i].smoking, drinking: data.items[i].drinking,
       });
 
       avAge =+ data.items[i].age; avWeight =+ data.items[i].weight; avHeight =+ data.items[i].height;
-      avTemperature =+ data.items[i].avTemperature; avPulse =+ data.items[i].avPulse; avPressure =+ data.items[i].avPressure;
-      avRespiration =+ data.items[i].avRespiration; avExercise =+ data.items[i].avExercise; avVacation =+ data.items[i].avVacation;
-      avWork =+ data.items[i].avWork;
+      avTemperature =+ data.items[i].temperature; avPulse =+ data.items[i].pulse; avPressure =+ data.items[i].pressure;
+      avRespiration =+ data.items[i].respiration; avExercise =+ data.items[i].exercise; avVacation =+ data.items[i].vacation;
+      avWork =+ data.items[i].work;
 
       if(data.items[i].gender == 'Man'){
         maleAge =+ data.items[i].age; maleWeight =+ data.items[i].weight; maleHeight =+ data.items[i].height;
-        maleTemperature =+ data.items[i].maleTemperature; malePulse =+ data.items[i].avPulse; malePressure =+ data.items[i].avPressure;
-        maleRespiration =+ data.items[i].maleRespiration; maleExercise =+ data.items[i].avExercise; maleVacation =+ data.items[i].avVacation;
-        maleWork =+ data.items[i].avWork;
+        maleTemperature =+ data.items[i].temperature; malePulse =+ data.items[i].pulse; malePressure =+ data.items[i].pressure;
+        maleRespiration =+ data.items[i].respiration; maleExercise =+ data.items[i].exercise; maleVacation =+ data.items[i].vacation;
+        maleWork =+ data.items[i].work;
+      }
+
+      if(data.items[i].gender == 'Woman'){
+        femaleAge =+ data.items[i].age; femaleWeight =+ data.items[i].weight; femaleHeight =+ data.items[i].height;
+        femaleTemperature =+ data.items[i].temperature; femalePulse =+ data.items[i].pulse; femalePressure =+ data.items[i].pressure;
+        femaleRespiration =+ data.items[i].respiration; femaleExercise =+ data.items[i].exercise; femaleVacation =+ data.items[i].vacation;
+        femaleWork =+ data.items[i].work;
+      }
+
+      if(data.items[i].gender != "Man" && data.items[i].gender != "Woman"){
+        otherAge =+ data.items[i].age; otherWeight =+ data.items[i].weight; otherHeight =+ data.items[i].height;
+        otherTemperature =+ data.items[i].temperature; otherPulse =+ data.items[i].pulse; otherPressure =+ data.items[i].pressure;
+        otherRespiration =+ data.items[i].respiration; otherExercise =+ data.items[i].exercise; otherVacation =+ data.items[i].vacation;
+        otherWork =+ data.items[i].work;
       }
 
       
   }
 
-return {entities, columns, isLoading, rows, data, avAge, avWeight, 
-        avHeight, avTemperature, avPulse, avPressure, avRespiration, avExercise, avVacation, avWork,
-        maleAge, maleWeight, maleHeight, maleTemperature, malePulse, malePressure, maleRespiration, maleExercise, maleVacation, maleWork
+return {entities, columns, isLoading, rows, data, 
+        avAge, avWeight, avHeight, avTemperature, avPulse, avPressure, avRespiration, avExercise, avVacation, avWork,
+        maleAge, maleWeight, maleHeight, maleTemperature, malePulse, malePressure, maleRespiration, maleExercise, maleVacation, maleWork,
+        femaleAge, femaleWeight, femaleHeight, femaleTemperature, femalePulse, femalePressure, femaleRespiration, femaleExercise, femaleVacation, femaleWork,
+        otherAge, otherWeight, otherHeight, otherTemperature, otherPulse, otherPressure, otherRespiration, otherExercise, otherVacation, otherWork,
       }
 }
 

@@ -3,11 +3,6 @@
   "$id": "http://vendia.net/schemas/demos/employee.json",
   "title": "Employee",
   "description": "Employee data",
-  "x-vendia-acls": {
-    "EmployeeAcl": {
-      "type": "Employee"
-    }
-  },
   "type": "object",
   "properties": {
     "Employee": {
@@ -16,12 +11,8 @@
       "items": {
         "type": "object",
         "properties": {
-          "fname": {
-            "description": "Employee first name",
-            "type": "string"
-          },
-          "lname": {
-            "description": "Employee last name",
+          "name": {
+            "description": "Employee name",
             "type": "string"
           },
           "age": {
@@ -74,22 +65,6 @@
           "work": {
             "description": "Avg hours of work per week",
             "type": "number"
-          },
-          "smoking": {
-            "description": "Smoking Status",
-            "type": "string",
-            "enum": [
-              "Yes",
-              "No"
-            ]
-          },
-          "drinking": {
-            "description": "Drinking Status",
-            "type": "string",
-            "enum": [
-              "Yes",
-              "No"
-            ]
           }
         }
       }

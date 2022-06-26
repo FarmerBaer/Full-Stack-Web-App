@@ -28,9 +28,29 @@ const genders = [
       value: 'NonBinary',
       label: 'Non-Binary',
   },
+  {
+      value: 'NoResponse',
+      label: 'No Response',
+}
+];
+const smokes = [
+  {
+      value: 'No',
+      label: 'No',
+  },
+  {
+      value: 'Yes',
+      label: 'Yes',
+  }
+];
+const drinks = [
+  {
+    value: 'No',
+    label: 'No',
+},
 {
-  value: 'NoResponse',
-  label: 'No Response',
+    value: 'Yes',
+    label: 'Yes',
 }
 ];
 
@@ -40,8 +60,9 @@ export default function Add() {
 
 const {entities} = useLogic();
 
-  const[gender, setGender] = useState('Woman');
-  const[name, setName] = useState("");
+  const[gender, setGender] = useState('Man');
+  const[fname, setFName] = useState("");
+  const[lname, setLName] = useState("");
   const[age, setAge] = useState("");
   const[height, setHeight] = useState("");
   const[weight, setWeight] = useState("");
@@ -52,12 +73,18 @@ const {entities} = useLogic();
   const[exercise, setExercise] = useState("");
   const[vacation, setVacation] = useState("");
   const[work, setWork] = useState("");
-  //married
-  //smoke?
-  //drink?
+  const[smoking, setSmoking] = useState('No');
+  const[drinking, setDrinking] = useState('No');
+  const[loading, setLoading] = useState();
 
-const handleChange = (event) => {
+const handleChangeGender = (event) => {
     setGender(event.target.value);
+};
+const handleChangeSmoker = (event) => {
+  setSmoking(event.target.value);
+};
+const handleChangeDrinker = (event) => {
+  setDrinking(event.target.value);
 };
 
 function handleSubmit(event) {
@@ -65,7 +92,8 @@ function handleSubmit(event) {
     const add = async() => {
       const addEmployee = await entities.employee.add({
         gender: gender ,
-        name: name,
+        fname: fname,
+        lname: lname,
         age: parseInt(age),
         height: parseInt(height),
         weight: parseInt(weight),
@@ -76,24 +104,25 @@ function handleSubmit(event) {
         exercise: parseInt(exercise),
         vacation: parseInt(vacation),
         work: parseInt(work),
+        smoking: smoking,
+        drinking: drinking
       })
-      console.log(addEmployee); 
+      console.log(addEmployee.transaction);
     }
     add();
 }
 
   return (
     <Grid container spacing={2}>
-      {[darkTheme].map((theme, index) => (
-        <Grid item xs={12} key={index}>
-          <ThemeProvider theme={theme}>
+        <Grid item xs={12}>
+          <ThemeProvider theme={darkTheme}>
           <Box
             sx={{
               p: 2,
               bgcolor: 'background.default',
-              display: 'grid',
+              display: 'flex',
               gridTemplateColumns: { md: '1fr' },
-              gap: 4,
+              gap: 2,
               height: '5vh'
             }}
           >
@@ -101,12 +130,12 @@ function handleSubmit(event) {
           </Box>
             <Box
               sx={{
-                p: 2,
+                p: 1,
                 bgcolor: 'background.default',
                 display: 'grid',
                 gridTemplateColumns: { md: '1fr 1fr' },
-                gap: 4,
-                height: '90vh'
+                gap: 2,
+                height: '97vh'
               }}
             >
               <TextField
@@ -115,7 +144,7 @@ function handleSubmit(event) {
                       label="Gender"
                       onInput={ e=>setGender(e.target.value)}
                       value={gender}
-                      onChange={handleChange}
+                      onChange={handleChangeGender}
                       helperText="Please select your gender"
                     >
                       {genders.map((option) => (
@@ -124,7 +153,8 @@ function handleSubmit(event) {
                         </MenuItem>
                       ))}
                     </TextField>
-        <TextField value={name} onInput={ e=>setName(e.target.value)} id="outlined-basic" label="Name" variant="outlined" />
+      <TextField value={fname} onInput={ e=>setFName(e.target.value)} id="outlined-basic" label="First Name" variant="outlined" />
+      <TextField value={lname} onInput={ e=>setLName(e.target.value)} id="outlined-basic" label="Last Name" variant="outlined" />
       <TextField value={age} onInput={ e=>setAge(e.target.value)} id="outlined-basic" label="Age" variant="outlined" />
       <TextField value={height} onInput={ e=>setHeight(e.target.value)} id="outlined-basic" label="Height" variant="outlined" InputProps={{
             endAdornment: <InputAdornment position="end">in</InputAdornment>, }} />
@@ -144,8 +174,40 @@ function handleSubmit(event) {
             endAdornment: <InputAdornment position="end">hrs</InputAdornment>, }} />
       <TextField value={work} onInput={ e=>setWork(e.target.value)} id="outlined-basic" label="Work" variant="outlined" InputProps={{
             endAdornment: <InputAdornment position="end">hrs/wk</InputAdornment>, }} />
+            <TextField
+                      id="outlined-select-smoker"
+                      select
+                      label="Smoker"
+                      onInput={ e=>setSmoking(e.target.value)}
+                      value={smoking}
+                      onChange={handleChangeSmoker}
+                      helperText="Select your smoking status"
+                    >
+                      {smokes.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          {option.label}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+                    <TextField
+                      id="outlined-select-drinker"
+                      select
+                      label="Drinker"
+                      onInput={ e=>setDrinking(e.target.value)}
+                      value={drinking}
+                      onChange={handleChangeDrinker}
+                      helperText="Select your drinking status"
+                    >
+                      {drinks.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          {option.label}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+                    <Button sx={{ height: '35%'
+              }}onClick={handleSubmit} variant="contained">Add</Button>
             </Box>
-            <Box
+            {/* <Box
             sx={{
               p: 2,
               bgcolor: 'background.default',
@@ -157,10 +219,9 @@ function handleSubmit(event) {
           >
             <Button sx={{
               }}onClick={handleSubmit} variant="contained">Add</Button>
-          </Box>
+          </Box> */}
           </ThemeProvider>
-        </Grid>
-      ))}    
+        </Grid>  
     </Grid>
   );
 }
