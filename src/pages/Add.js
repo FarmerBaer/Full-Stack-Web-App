@@ -105,6 +105,103 @@ const add = async() => {
     work: parseInt(work),
     smoking: smoking,
     drinking: drinking
+  },
+  {
+    aclInput: {
+      acl: [
+        {
+          principal: {
+            nodes: ["*"]
+          }, 
+          path: "gender", 
+          operations: ['READ']
+        }, 
+        {
+          principal: {
+            nodes: ["*"]
+          }, 
+          path: "age", 
+          operations: ['READ']
+        }, 
+        {
+          principal: {
+            nodes: ["*"]
+          }, 
+          path: "height", 
+          operations: ['READ']
+        }, 
+        {
+          principal: {
+            nodes: ["*"]
+          }, 
+          path: "weight", 
+          operations: ['READ']
+        }, 
+        {
+          principal: {
+            nodes: ["*"]
+          }, 
+          path: "temperature", 
+          operations: ['READ']
+        }, 
+        {
+          principal: {
+            nodes: ["*"]
+          }, 
+          path: "pulse", 
+          operations: ['READ']
+        }, 
+        {
+          principal: {
+            nodes: ["*"]
+          }, 
+          path: "pressure", 
+          operations: ['READ']
+        }, 
+        {
+          principal: {
+            nodes: ["*"]
+          }, 
+          path: "respiration", 
+          operations: ['READ']
+        },
+        {
+          principal: {
+            nodes: ["*"]
+          }, 
+          path: "exercise", 
+          operations: ['READ']
+        }, 
+        {
+          principal: {
+            nodes: ["*"]
+          }, 
+          path: "vacation", 
+          operations: ['READ']
+        },
+        {
+          principal: {
+            nodes: ["*"]
+          }, 
+          path: "work", 
+          operations: ['READ']
+        },  
+        {
+          principal: {
+            nodes: ["*"]
+          }, 
+          path: "smoking", 
+          operations: ['READ']
+        },
+        {
+          principal: {
+            nodes: ["*"]
+          }, 
+          path: "drinking", 
+          operations: ['READ']
+        }   
+      ]
+    },
   })
   setLoading(false);
 }
