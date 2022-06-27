@@ -31,19 +31,17 @@ const columns = [
 
 const [data, setData] = useState();
 const [length, setLength] = useState();
-const [isLoading, setLoading] = useState(true);
 
 
 useEffect(() => {
       const async = async () => {
       const response = await entities.employee.list();
       setData(response);
-      setLoading(false);
-      setLength(response.items.length)
-      console.log(response);
+      setLength(response.items.length);
     }
-    async()
+    async();
   }, []);
+
 
   var rows = [];
   var avAge, avWeight, avHeight, avTemperature, avPulse, avPressure, avRespiration, avExercise, avVacation, avWork = 0;
@@ -91,7 +89,7 @@ useEffect(() => {
       
   }
 
-return {entities, columns, isLoading, rows, data, 
+return {entities, columns, rows, data,
         avAge, avWeight, avHeight, avTemperature, avPulse, avPressure, avRespiration, avExercise, avVacation, avWork,
         maleAge, maleWeight, maleHeight, maleTemperature, malePulse, malePressure, maleRespiration, maleExercise, maleVacation, maleWork,
         femaleAge, femaleWeight, femaleHeight, femaleTemperature, femalePulse, femalePressure, femaleRespiration, femaleExercise, femaleVacation, femaleWork,

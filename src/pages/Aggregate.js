@@ -1,6 +1,6 @@
 import React from 'react'
 import Navb from './Navb'
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme, ThemeProvider} from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import useLogic from '../hooks/useLogic';
@@ -10,12 +10,10 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-
+import {useState} from 'react';
 
 
 const darkTheme = createTheme({ palette: { mode: 'dark' } });
-
-
 
 export default function Aggregate() {
 
@@ -24,7 +22,14 @@ const {avAge, avWeight, avHeight, avTemperature, avPulse, avPressure, avRespirat
       femaleAge, femaleWeight, femaleHeight, femaleTemperature, femalePulse, femalePressure, femaleRespiration, femaleExercise, femaleVacation, femaleWork,
       otherAge, otherWeight, otherHeight, otherTemperature, otherPulse, otherPressure, otherRespiration, otherExercise, otherVacation, otherWork
 } = useLogic();
-//s
+
+const [agg, setAgg] = useState(true);
+
+const handleChangeAgg = () => {
+  setAgg(!agg);
+};
+
+
 const age = {
   labels: ["Total","Male","Female", "Other"],
   datasets: [
@@ -207,6 +212,8 @@ const work = {
 
   return (
     <Grid container spacing={2} >
+      {
+        agg?
       <Grid item xs={12}>
         <ThemeProvider theme={darkTheme}>
           <Box
@@ -237,9 +244,10 @@ const work = {
         row
         aria-labelledby="demo-row-radio-buttons-group-label"
         name="row-radio-buttons-group"
+        onChange={handleChangeAgg}
       >
-        <FormControlLabel value="raw" control={<Radio />} label="Raw" />
-        <FormControlLabel value="chart" control={<Radio />} label="Chart" />
+        <FormControlLabel value="raw" control={<Radio />} label="Chart" checked />
+        <FormControlLabel value="chart" control={<Radio />} label="Raw" />
       </RadioGroup>
     </FormControl>
       </Box>
@@ -249,7 +257,7 @@ const work = {
               bgcolor: 'background.default',
               display: 'flex',
               height: '50vh',
-              justifyContent: 'space-between'
+              justifyContent: 'space-between',
             }}
           >
             <div style={{width: '45%', border: '1px solid white'}}>
@@ -325,6 +333,128 @@ const work = {
             </Box>
         </ThemeProvider>
       </Grid> 
+        :
+        <Grid item xs={12}>
+        <ThemeProvider theme={darkTheme}>
+          <Box
+            sx={{
+              p: 2,
+              bgcolor: 'background.default',
+              display: 'grid',
+              gridTemplateColumns: { md: '1fr' },
+              gap: 2,
+              height: '5%'
+            }}
+          >
+            <Navb></Navb>
+          </Box>
+          <Box
+            sx={{
+              p: 2,
+              bgcolor: 'background.default',
+              display: 'flex',
+              height: '5vh',
+              justifyContent: 'center',
+              color: "white"
+            }}
+          >
+        <FormControl>
+      <FormLabel id="demo-row-radio-buttons-group-label">Data Format</FormLabel>
+      <RadioGroup
+        row
+        aria-labelledby="demo-row-radio-buttons-group-label"
+        name="row-radio-buttons-group"
+        onChange={handleChangeAgg}
+      >
+        <FormControlLabel value="raw" control={<Radio />} label="Chart" />
+        <FormControlLabel value="chart" control={<Radio />} label="Raw" />
+      </RadioGroup>
+    </FormControl>
+      </Box>
+      <Box
+            sx={{
+              p: 2,
+              bgcolor: 'background.default',
+              display: 'flex',
+              height: '50vh',
+              justifyContent: 'space-between',
+              color: 'white'
+          
+            }}
+          >
+            <div style={{width: '45%', height: '100%', border: '1px solid white'}}>
+            </div>
+            <div style={{width: '45%', border: '1px solid white'}}>
+            
+            </div>
+            </Box>
+            <Box
+            sx={{
+              p: 2,
+              bgcolor: 'background.default',
+              display: 'flex',
+              height: '50vh',
+              justifyContent: 'space-between'
+            }}
+          >
+            <div style={{width: '45%', border: '1px solid white'}}>
+            
+            </div>
+            <div style={{width: '45%', border: '1px solid white'}}>
+            
+            </div>
+            </Box>
+            <Box
+            sx={{
+              p: 2,
+              bgcolor: 'background.default',
+              display: 'flex',
+              height: '50vh',
+              justifyContent: 'space-between'
+            }}
+          >
+            <div style={{width: '45%', border: '1px solid white'}}>
+            
+            </div>
+            <div style={{width: '45%', border: '1px solid white'}}>
+            
+            </div>
+            </Box>
+            <Box
+            sx={{
+              p: 2,
+              bgcolor: 'background.default',
+              display: 'flex',
+              height: '50vh',
+              justifyContent: 'space-between'
+            }}
+          >
+            <div style={{width: '45%', border: '1px solid white'}}>
+            
+            </div>
+            <div style={{width: '45%', border: '1px solid white'}}>
+            
+            </div>
+            </Box>
+            <Box
+            sx={{
+              p: 2,
+              bgcolor: 'background.default',
+              display: 'flex',
+              height: '50vh',
+              justifyContent: 'space-between'
+            }}
+          >
+            <div style={{width: '45%', border: '1px solid white'}}>
+            
+            </div>
+            <div style={{width: '45%', border: '1px solid white'}}>
+            
+            </div>
+            </Box>
+        </ThemeProvider>
+      </Grid> 
+      }
   </Grid>
   )
 }

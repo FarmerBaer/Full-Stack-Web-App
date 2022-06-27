@@ -4,12 +4,12 @@ import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import InputAdornment from '@mui/material/InputAdornment';
 import Button from '@mui/material/Button';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import useLogic from '../hooks/useLogic';
-import Navb from './Navb'; 
-import Paper from '@mui/material/Paper';
+import Navb from './Navb';
 import Grid from '@mui/material/Grid';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme, ThemeProvider} from '@mui/material/styles';
+import ClipLoader from "react-spinners/ClipLoader";
       
 const genders = [
   {
@@ -87,33 +87,41 @@ const handleChangeDrinker = (event) => {
   setDrinking(event.target.value);
 };
 
+const add = async() => {
+  setLoading(true);
+  const addEmployee = await entities.employee.add({
+    gender: gender ,
+    fname: fname,
+    lname: lname,
+    age: parseInt(age),
+    height: parseInt(height),
+    weight: parseInt(weight),
+    temperature: parseInt(temperature),
+    pulse: parseInt(pulse),
+    pressure: parseInt(pressure),
+    respiration: parseInt(respiration),
+    exercise: parseInt(exercise),
+    vacation: parseInt(vacation),
+    work: parseInt(work),
+    smoking: smoking,
+    drinking: drinking
+  })
+  setLoading(false);
+}
+
 function handleSubmit(event) {
     event.preventDefault();
-    const add = async() => {
-      const addEmployee = await entities.employee.add({
-        gender: gender ,
-        fname: fname,
-        lname: lname,
-        age: parseInt(age),
-        height: parseInt(height),
-        weight: parseInt(weight),
-        temperature: parseInt(temperature),
-        pulse: parseInt(pulse),
-        pressure: parseInt(pressure),
-        respiration: parseInt(respiration),
-        exercise: parseInt(exercise),
-        vacation: parseInt(vacation),
-        work: parseInt(work),
-        smoking: smoking,
-        drinking: drinking
-      })
-      console.log(addEmployee.transaction);
-    }
-    add();
+    add();   
 }
+
+useEffect(() => {
+  
+}, [])
 
   return (
     <Grid container spacing={2}>
+      {
+        loading?
         <Grid item xs={12}>
           <ThemeProvider theme={darkTheme}>
           <Box
@@ -122,7 +130,35 @@ function handleSubmit(event) {
               bgcolor: 'background.default',
               display: 'flex',
               gridTemplateColumns: { md: '1fr' },
-              gap: 2,
+              gap: 4,
+              height: '5vh'
+            }}
+          >
+            <Navb></Navb>
+          </Box>
+            <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+              sx={{
+                bgcolor: 'background.default',
+                height: '95vh'
+              }}
+            >
+            <ClipLoader color={'blue'} loading={loading}  size={150}/>
+            </Box>
+          </ThemeProvider>
+        </Grid> 
+        :
+        <Grid item xs={12}>
+          <ThemeProvider theme={darkTheme}>
+          <Box
+            sx={{
+              p: 2,
+              bgcolor: 'background.default',
+              display: 'flex',
+              gridTemplateColumns: { md: '1fr' },
+              gap: 4,
               height: '5vh'
             }}
           >
@@ -130,12 +166,12 @@ function handleSubmit(event) {
           </Box>
             <Box
               sx={{
-                p: 1,
+                p: 2,
                 bgcolor: 'background.default',
                 display: 'grid',
                 gridTemplateColumns: { md: '1fr 1fr' },
-                gap: 2,
-                height: '97vh'
+                gap: 4,
+                height: '95vh'
               }}
             >
               <TextField
@@ -204,24 +240,12 @@ function handleSubmit(event) {
                         </MenuItem>
                       ))}
                     </TextField>
-                    <Button sx={{ height: '35%'
+                    <Button sx={{ height: '60%'
               }}onClick={handleSubmit} variant="contained">Add</Button>
             </Box>
-            {/* <Box
-            sx={{
-              p: 2,
-              bgcolor: 'background.default',
-              display: 'grid',
-              gridTemplateColumns: { md: '1fr' },
-              gap: 2,
-              height: '5vh'
-            }}
-          >
-            <Button sx={{
-              }}onClick={handleSubmit} variant="contained">Add</Button>
-          </Box> */}
           </ThemeProvider>
-        </Grid>  
+        </Grid> 
+      }
     </Grid>
   );
 }
