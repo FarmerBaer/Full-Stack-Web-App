@@ -13,10 +13,12 @@ const darkTheme = createTheme({ palette: { mode: 'dark' } });
 
 export default function Employees() {
 
-const {columns, rows, entities} = useLogic();
+const {entities, columns} = useLogic();
 
 const [loading, setLoading] = useState(false);
 const [selectionModel, setSelectionModel] = useState([]);
+const [data, setData] = useState();
+const [length, setLength] = useState();
 
 const remove = async() => {
   setLoading(true);
@@ -24,19 +26,34 @@ const remove = async() => {
   setLoading(false);
 }
 
-
 function handleSubmitRemove(event) {
   event.preventDefault();
   remove();
 }
 
-
-
 useEffect(() => {
-  console.log("working?");
+  const async = async () => {
+    const response = await entities.employee.list();
+    setData(response);
+    setLength(response.items.length);
+  }
+  async();
 }, [loading]);
 
 
+var rows = [];
+for (var i = 0; i < length; i++) {
+    rows.push({
+         fname: data.items[i].fname, lname: data.items[i].lname, gender: data.items[i].gender, 
+         age: data.items[i].age, weight: data.items[i].weight, 
+         height: data.items[i].height, temperature: data.items[i].temperature, 
+         pulse: data.items[i].pulse, pressure: data.items[i].pressure, 
+         respiration: data.items[i].respiration, exercise: data.items[i].exercise, 
+         vacation: data.items[i].vacation, work: data.items[i].work, id: data.items[i]._id, 
+         smoking: data.items[i].smoking, drinking: data.items[i].drinking,
+});
+}
+ 
 return (
   <Grid container spacing={2} >
     {

@@ -12,30 +12,29 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import {useState} from 'react';
 
-
 const darkTheme = createTheme({ palette: { mode: 'dark' } });
 
 export default function Aggregate() {
 
-const {avAge, avWeight, avHeight, avTemperature, avPulse, avPressure, avRespiration, avExercise, avVacation, avWork,
-      maleAge, maleWeight, maleHeight, maleTemperature, malePulse, malePressure, maleRespiration, maleExercise, maleVacation, maleWork,
-      femaleAge, femaleWeight, femaleHeight, femaleTemperature, femalePulse, femalePressure, femaleRespiration, femaleExercise, femaleVacation, femaleWork,
-      otherAge, otherWeight, otherHeight, otherTemperature, otherPulse, otherPressure, otherRespiration, otherExercise, otherVacation, otherWork
+const [agg, setAgg] = useState(true);
+
+const {avtotalAge, avtotalWeight, avtotalHeight, avtotalTemperature, avtotalPulse, avtotalPressure, avtotalRespiration, avtotalExercise, avtotalVacation, avtotalWork,
+      avmaleAge, avmaleWeight, avmaleHeight, avmaleTemperature, avmalePulse, avmalePressure, avmaleRespiration, avmaleExercise, avmaleVacation, avmaleWork,
+      avfemaleAge, avfemaleWeight, avfemaleHeight, avfemaleTemperature, avfemalePulse, avfemalePressure, avfemaleRespiration, avfemaleExercise, avfemaleVacation, avfemaleWork,
+      avotherAge, avotherWeight, avotherHeight, avotherTemperature, avotherPulse, avotherPressure, avotherRespiration, avotherExercise, avotherVacation, avotherWork
 } = useLogic();
 
-const [agg, setAgg] = useState(true);
 
 const handleChangeAgg = () => {
   setAgg(!agg);
 };
-
 
 const age = {
   labels: ["Total","Male","Female", "Other"],
   datasets: [
     {
       label: "Age",
-      data: [avAge, maleAge, femaleAge, otherAge],
+      data: [avtotalAge, avmaleAge, avfemaleAge, avotherAge],
       backgroundColor: [
         "#219ebc",
         "#ff006e",
@@ -53,7 +52,7 @@ const weight = {
   datasets: [
     {
       label: "Weight",
-      data: [avWeight, maleWeight, femaleWeight, otherWeight],
+      data: [avtotalWeight, avmaleWeight, avfemaleWeight, avotherWeight],
       backgroundColor: [
         "#219ebc",
         "#ff006e",
@@ -71,7 +70,7 @@ const height = {
   datasets: [
     {
       label: "Height",
-      data: [avHeight, maleHeight, femaleHeight, otherHeight],
+      data: [avtotalHeight, avmaleHeight, avfemaleHeight, avotherHeight],
       backgroundColor: [
         "#219ebc",
         "#ff006e",
@@ -89,7 +88,7 @@ const temperature = {
   datasets: [
     {
       label: "Temperature",
-      data: [avTemperature, maleTemperature, femaleTemperature, otherTemperature],
+      data: [avtotalTemperature, avmaleTemperature, avfemaleTemperature, avotherTemperature],
       backgroundColor: [
         "#219ebc",
         "#ff006e",
@@ -107,7 +106,7 @@ const pulse = {
   datasets: [
     {
       label: "Pulse",
-      data: [avPulse, malePulse, femalePulse, otherPulse],
+      data: [avtotalPulse, avmalePulse, avfemalePulse, avotherPulse],
       backgroundColor: [
         "#219ebc",
         "#ff006e",
@@ -125,7 +124,7 @@ const pressure = {
   datasets: [
     {
       label: "Pressure",
-      data: [avPressure, malePressure, femalePressure, otherPressure],
+      data: [avtotalPressure, avmalePressure, avfemalePressure, avotherPressure],
       backgroundColor: [
         "#219ebc",
         "#ff006e",
@@ -143,7 +142,7 @@ const respiration = {
   datasets: [
     {
       label: "Respiration",
-      data: [avRespiration, maleRespiration, femaleRespiration, otherRespiration],
+      data: [avtotalRespiration, avmaleRespiration, avfemaleRespiration, avotherRespiration],
       backgroundColor: [
         "#219ebc",
         "#ff006e",
@@ -161,7 +160,7 @@ const exercise = {
   datasets: [
     {
       label: "Exercise",
-      data: [avExercise, maleExercise, femaleExercise, otherExercise],
+      data: [avtotalExercise, avmaleExercise, avfemaleExercise, avotherExercise],
       backgroundColor: [
         "#219ebc",
         "#ff006e",
@@ -179,7 +178,7 @@ const vacation = {
   datasets: [
     {
       label: "Vacation",
-      data: [avVacation, maleVacation, femaleVacation, otherVacation],
+      data: [avtotalVacation, avmaleVacation, avfemaleVacation, avotherVacation],
       backgroundColor: [
         "#219ebc",
         "#ff006e",
@@ -197,7 +196,7 @@ const work = {
   datasets: [
     {
       label: "Work",
-      data: [avWork, maleWork, femaleWork, otherWork],
+      data: [avtotalWork, avmaleWork, avfemaleWork, avotherWork],
       backgroundColor: [
         "#219ebc",
         "#ff006e",
@@ -383,6 +382,8 @@ const work = {
             }}
           >
             <div style={{width: '45%', height: '100%', border: '1px solid white'}}>
+            
+
             </div>
             <div style={{width: '45%', border: '1px solid white'}}>
             
