@@ -8,6 +8,7 @@ import Employees from "./pages/Employees";
 import Home from "./pages/Home";
 import Aggregate from "./pages/Aggregate";
 import Info from "./pages/Info";
+import Secondary from "./pages/Secondary";
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/add" element={<Add/>}/>
         <Route path="/employees" element={<Employees/>}/>
         <Route path="/info" element={<Info/>}/>
+        <Route path="/secondary" element={<Secondary/>}/>
         </Routes>
       </Router>
   );
