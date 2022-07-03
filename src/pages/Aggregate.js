@@ -434,24 +434,24 @@ const work = {
           >
             <div style={{display: 'block',  width: '32%', height: '100%', border: '1px solid white', color: 'white', justifyContent: 'center'}}>
             <h1 style={{paddingTop: "10px", color: "#33FF5E", textAlign: 'center'}}>Age</h1>
-            {(gender === 'All')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avtotalAge}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Man')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avmaleAge}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Woman')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avfemaleAge}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Other')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avotherAge}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'All')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avtotalAge}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Man')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avmaleAge}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Woman')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avfemaleAge}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Other')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avotherAge}</h1>:<h1 style={{}}></h1>}
             </div>
             <div style={{display: 'block',  width: '32%', height: '100%', border: '1px solid white', color: 'white', justifyContent: 'center'}}>
             <h1 style={{paddingTop: "10px", color: "#33FF5E", textAlign: 'center'}}>Height</h1>
-            {(gender === 'All')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avtotalHeight}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Man')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avmaleHeight}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Woman')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avfemaleHeight}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Other')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avotherHeight}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'All')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avtotalHeight}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Man')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avmaleHeight}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Woman')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avfemaleHeight}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Other')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avotherHeight}</h1>:<h1 style={{}}></h1>}
             </div>
             <div style={{display: 'block',  width: '32%', height: '100%', border: '1px solid white', color: 'white', justifyContent: 'center'}}>
             <h1 style={{paddingTop: "10px", color: "#33FF5E", textAlign: 'center'}}>Weight</h1>
-            {(gender === 'All')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avtotalWeight}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Man')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avmaleWeight}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Woman')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avfemaleWeight}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Other')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avotherWeight}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'All')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avtotalWeight}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Man')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avmaleWeight}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Woman')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avfemaleWeight}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Other')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avotherWeight}</h1>:<h1 style={{}}></h1>}
             </div>
             </Box>
             <Box
@@ -467,24 +467,24 @@ const work = {
           >
             <div style={{display: 'block',  width: '32%', height: '100%', border: '1px solid white', color: 'white', justifyContent: 'center'}}>
             <h1 style={{paddingTop: "10px", color: "#33FF5E", textAlign: 'center'}}>Temperature</h1>
-            {(gender === 'All')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avtotalTemperature}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Man')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avmaleTemperature}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Woman')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avfemaleTemperature}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Other')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avotherTemperature}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'All')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avtotalTemperature}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Man')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avmaleTemperature}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Woman')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avfemaleTemperature}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Other')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avotherTemperature}</h1>:<h1 style={{}}></h1>}
             </div>
             <div style={{display: 'block',  width: '32%', height: '100%', border: '1px solid white', color: 'white', justifyContent: 'center'}}>
             <h1 style={{paddingTop: "10px", color: "#33FF5E", textAlign: 'center'}}>Pulse</h1>
-            {(gender === 'All')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avtotalPulse}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Man')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avmalePulse}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Woman')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avfemalePulse}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Other')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avotherPulse}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'All')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avtotalPulse}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Man')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avmalePulse}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Woman')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avfemalePulse}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Other')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avotherPulse}</h1>:<h1 style={{}}></h1>}
             </div>
             <div style={{display: 'block',  width: '32%', height: '100%', border: '1px solid white', color: 'white', justifyContent: 'center'}}>
             <h1 style={{paddingTop: "10px", color: "#33FF5E", textAlign: 'center'}}>Pressure</h1>
-            {(gender === 'All')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avtotalPressure}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Man')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avmalePressure}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Woman')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avfemalePressure}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Other')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avotherPressure}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'All')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avtotalPressure}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Man')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avmalePressure}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Woman')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avfemalePressure}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Other')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avotherPressure}</h1>:<h1 style={{}}></h1>}
             </div>
             </Box>
             <Box
@@ -500,24 +500,24 @@ const work = {
           >
             <div style={{display: 'block',  width: '32%', height: '100%', border: '1px solid white', color: 'white', justifyContent: 'center'}}>
             <h1 style={{paddingTop: "10px", color: "#33FF5E", textAlign: 'center'}}>Respiration</h1>
-            {(gender === 'All')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avtotalRespiration}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Man')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avmaleRespiration}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Woman')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avfemaleRespiration}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Other')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avotherRespiration}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'All')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avtotalRespiration}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Man')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avmaleRespiration}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Woman')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avfemaleRespiration}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Other')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avotherRespiration}</h1>:<h1 style={{}}></h1>}
             </div>
             <div style={{display: 'block',  width: '32%', height: '100%', border: '1px solid white', color: 'white', justifyContent: 'center'}}>
             <h1 style={{paddingTop: "10px", color: "#33FF5E", textAlign: 'center'}}>Exercise</h1>
-            {(gender === 'All')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avtotalExercise}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Man')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avmaleExercise}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Woman')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avfemaleExercise}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Other')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avotherExercise}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'All')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avtotalExercise}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Man')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avmaleExercise}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Woman')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avfemaleExercise}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Other')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avotherExercise}</h1>:<h1 style={{}}></h1>}
             </div>
             <div style={{display: 'block',  width: '32%', height: '100%', border: '1px solid white', color: 'white', justifyContent: 'center'}}>
             <h1 style={{paddingTop: "10px", color: "#33FF5E", textAlign: 'center'}}>Vacation</h1>
-            {(gender === 'All')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avtotalVacation}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Man')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avmaleVacation}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Woman')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avfemaleVacation}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Other')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avotherVacation}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'All')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avtotalVacation}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Man')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avmaleVacation}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Woman')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avfemaleVacation}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Other')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avotherVacation}</h1>:<h1 style={{}}></h1>}
             </div>
             </Box>
             <Box
@@ -533,24 +533,24 @@ const work = {
           >
             <div style={{display: 'block',  width: '32%', height: '100%', border: '1px solid white', color: 'white', justifyContent: 'center'}}>
             <h1 style={{paddingTop: "10px", color: "#33FF5E", textAlign: 'center'}}>Work</h1>
-            {(gender === 'All')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avtotalWork}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Man')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avmaleWork}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Woman')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avfemaleWork}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Other')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{avotherWork}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'All')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avtotalWork}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Man')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avmaleWork}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Woman')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avfemaleWork}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Other')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{avotherWork}</h1>:<h1 style={{}}></h1>}
             </div>
             <div style={{display: 'block',  width: '32%', height: '100%', border: '1px solid white', color: 'white', justifyContent: 'center'}}>
             <h1 style={{paddingTop: "10px", color: "#33FF5E", textAlign: 'center'}}>Smoker</h1>
-            {(gender === 'All')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{totalSmoking}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Man')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{maleSmoking}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Woman')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{femaleSmoking}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Other')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{otherSmoking}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'All')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{totalSmoking}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Man')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{maleSmoking}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Woman')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{femaleSmoking}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Other')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{otherSmoking}</h1>:<h1 style={{}}></h1>}
             </div>
             <div style={{display: 'block',  width: '32%', height: '100%', border: '1px solid white', color: 'white', justifyContent: 'center'}}>
             <h1 style={{paddingTop: "10px", color: "#33FF5E", textAlign: 'center'}}>Drinker</h1>
-            {(gender === 'All')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{totalDrinking}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Man')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{maleDrinking}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Woman')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{femaleDrinking}</h1>:<h1 style={{}}></h1>}
-            {(gender === 'Other')?<h1 style={{paddingTop: "10%", textAlign: 'center'}}>{otherDrinking}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'All')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{totalDrinking}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Man')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{maleDrinking}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Woman')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{femaleDrinking}</h1>:<h1 style={{}}></h1>}
+            {(gender === 'Other')?<h1 style={{textAlign: 'center', fontSize: '100px'}}>{otherDrinking}</h1>:<h1 style={{}}></h1>}
             </div>
             </Box>
         </ThemeProvider>
