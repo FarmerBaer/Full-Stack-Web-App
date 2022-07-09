@@ -5,8 +5,9 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
-import QuestionMarkSharpIcon from '@mui/icons-material/QuestionMarkSharp';
+// import QuestionMarkSharpIcon from '@mui/icons-material/QuestionMarkSharp';
 import TimelineIcon from '@mui/icons-material/Timeline';
+import PersonIcon from '@mui/icons-material/Person';
 import CottageIcon from '@mui/icons-material/Cottage';
 
 export default function Navb() {
@@ -26,9 +27,12 @@ export default function Navb() {
     <IconButton href="/aggregate" aria-label="delete" size="small">
         <TimelineIcon fontSize="inherit" style={{maxWidth: '5vh', maxHeight: '5vh', minWidth: '5vh', minHeight: '5vh'}}/>
       </IconButton>
-    <IconButton href="/info" aria-label="delete" size="small">
-        <QuestionMarkSharpIcon fontSize="inherit" style={{color: 'rgb(0, 0, 255)', maxWidth: '5vh', maxHeight: '5vh', minWidth: '5vh', minHeight: '5vh'}}/>
+      <IconButton href="/secondary" aria-label="delete" size="small">
+        <PersonIcon fontSize="inherit" style={{color: 'rgb(0, 0, 255)', maxWidth: '5vh', maxHeight: '5vh', minWidth: '5vh', minHeight: '5vh'}}/>
       </IconButton>
+    {/* <IconButton href="/info" aria-label="delete" size="small">
+        <QuestionMarkSharpIcon fontSize="inherit" style={{color: 'rgb(255, 218, 51)', maxWidth: '5vh', maxHeight: '5vh', minWidth: '5vh', minHeight: '5vh'}}/>
+      </IconButton> */}
         </Toolbar>
       </AppBar>
     </Box>

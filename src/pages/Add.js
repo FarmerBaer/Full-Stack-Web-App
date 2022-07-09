@@ -211,9 +211,6 @@ function handleSubmit(event) {
     add();   
 }
 
-useEffect(() => {
-  
-}, [])
 
   return (
     <Grid container spacing={2}>

@@ -4,9 +4,11 @@ import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
-import QuestionMarkSharpIcon from '@mui/icons-material/QuestionMarkSharp';
+import PersonIcon from '@mui/icons-material/Person';
+// import QuestionMarkSharpIcon from '@mui/icons-material/QuestionMarkSharp';
 import TimelineIcon from '@mui/icons-material/Timeline';
 import { createTheme, ThemeProvider} from '@mui/material/styles';
+
 
 const darkTheme = createTheme({ palette: { mode: 'dark' } });
 
@@ -24,7 +26,15 @@ export default function Home() {
     justifyContent="center"
     style={{ minHeight: '100vh' }}
     sx={{
-      bgcolor: 'background.default'
+      backgroundImage: `url(https://wallpaperaccess.com/full/187161.jpg)`,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      position: 'absolute',
+      top:'0px',
+      left:'0px',
+      width: '100%',
+      height: '100%',
     }}
     >
     <ButtonGroup disableElevation variant="contained">
@@ -38,14 +48,13 @@ export default function Home() {
         <TimelineIcon fontSize="inherit" style={{maxWidth: '35vh', maxHeight: '35vh', minWidth: '35vh', minHeight: '35vh'}}/>
       </IconButton>
       <IconButton href="/secondary" aria-label="secondary" size="small">
-        <QuestionMarkSharpIcon fontSize="inherit" style={{color: 'rgb(0, 0, 255)', maxWidth: '35vh', maxHeight: '35vh', minWidth: '35vh', minHeight: '35vh'}}/>
+        <PersonIcon fontSize="inherit" style={{color: 'rgb(0, 0, 255)', maxWidth: '35vh', maxHeight: '35vh', minWidth: '35vh', minHeight: '35vh'}}/>
       </IconButton>
-    <IconButton href="/info" aria-label="info" size="small">
-        <QuestionMarkSharpIcon fontSize="inherit" style={{color: 'rgb(0, 0, 255)', maxWidth: '35vh', maxHeight: '35vh', minWidth: '35vh', minHeight: '35vh'}}/>
-      </IconButton>
+    {/* <IconButton href="/info" aria-label="info" size="small">
+        <QuestionMarkSharpIcon fontSize="inherit" style={{color: 'rgb(255, 218, 51)', maxWidth: '35vh', maxHeight: '35vh', minWidth: '35vh', minHeight: '35vh'}}/>
+      </IconButton> */}
     </ButtonGroup>
   </Grid>
   </ThemeProvider>
   )
 }
-

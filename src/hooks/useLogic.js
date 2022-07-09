@@ -56,43 +56,43 @@ for (var i = 0; i < length; i++) {
     totalWork += data.items[i].work; 
 
     
-    if(data.items[i].gender == 'Man'){
+    if(data.items[i].gender === 'Man'){
       maleAge += data.items[i].age; maleWeight += data.items[i].weight; maleHeight += data.items[i].height;
       maleTemperature += data.items[i].temperature; malePulse += data.items[i].pulse; malePressure += data.items[i].pressure;
       maleRespiration += data.items[i].respiration; maleExercise += data.items[i].exercise; maleVacation += data.items[i].vacation;
       maleWork += data.items[i].work; 
-      if(data.items[i].smoking == 'Yes'){
+      if(data.items[i].smoking === 'Yes'){
         maleSmoking++;
       }
-      if(data.items[i].drinking == 'Yes'){
+      if(data.items[i].drinking === 'Yes'){
         maleDrinking++;
       }
       maleCount++;
     }
   
-    if(data.items[i].gender == 'Woman'){
+    if(data.items[i].gender === 'Woman'){
       femaleAge += data.items[i].age; femaleWeight += data.items[i].weight; femaleHeight += data.items[i].height;
       femaleTemperature += data.items[i].temperature; femalePulse += data.items[i].pulse; femalePressure += data.items[i].pressure;
       femaleRespiration += data.items[i].respiration; femaleExercise += data.items[i].exercise; femaleVacation += data.items[i].vacation;
       femaleWork += data.items[i].work; 
-      if(data.items[i].smoking == 'Yes'){
+      if(data.items[i].smoking === 'Yes'){
         femaleSmoking++;
       }
-      if(data.items[i].drinking == 'Yes'){
+      if(data.items[i].drinking === 'Yes'){
         femaleDrinking++;
       }
       femaleCount++;
     }
   
-    if(data.items[i].gender != "Man" && data.items[i].gender != "Woman"){
+    if(data.items[i].gender !== "Man" && data.items[i].gender !== "Woman"){
       otherAge += data.items[i].age; otherWeight += data.items[i].weight; otherHeight += data.items[i].height;
       otherTemperature += data.items[i].temperature; otherPulse += data.items[i].pulse; otherPressure += data.items[i].pressure;
       otherRespiration += data.items[i].respiration; otherExercise += data.items[i].exercise; otherVacation += data.items[i].vacation;
       otherWork += data.items[i].work;
-      if(data.items[i].smoking == 'Yes'){
+      if(data.items[i].smoking === 'Yes'){
         otherSmoking++;
       }
-      if(data.items[i].drinking == 'Yes'){
+      if(data.items[i].drinking === 'Yes'){
         otherDrinking++;
       }
       otherCount++;
@@ -115,9 +115,7 @@ var avotherAge  = Math.trunc(avotherAge1),  avotherWeight   = Math.trunc(avother
 return {entities, columns, avtotalAge, avtotalWeight, avtotalHeight, avtotalTemperature, avtotalPulse, avtotalPressure, avtotalRespiration, avtotalExercise, avtotalVacation, avtotalWork, totalSmoking, totalDrinking,
         avmaleAge, avmaleWeight, avmaleHeight, avmaleTemperature, avmalePulse, avmalePressure, avmaleRespiration, avmaleExercise, avmaleVacation, avmaleWork, maleSmoking, maleDrinking,
         avfemaleAge, avfemaleWeight, avfemaleHeight, avfemaleTemperature, avfemalePulse, avfemalePressure, avfemaleRespiration, avfemaleExercise, avfemaleVacation, avfemaleWork, femaleSmoking, femaleDrinking,
-        avotherAge, avotherWeight, avotherHeight, avotherTemperature, avotherPulse, avotherPressure, avotherRespiration, avotherExercise, avotherVacation, avotherWork, otherSmoking, otherDrinking
-
-  
+        avotherAge, avotherWeight, avotherHeight, avotherTemperature, avotherPulse, avotherPressure, avotherRespiration, avotherExercise, avotherVacation, avotherWork, otherSmoking, otherDrinking 
 }
 }
 export default useLogic;
