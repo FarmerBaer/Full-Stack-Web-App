@@ -6,7 +6,7 @@ const useLogic = () => {
 const client = createVendiaClient({
     apiUrl: `https://i21sdh9oha.execute-api.us-west-2.amazonaws.com/graphql/`,
     websocketUrl: `wss://vog584wc2c.execute-api.us-west-2.amazonaws.com/graphql`,
-    apiKey: 'J7CCs8P1BTFkZg9VuvtKqybvEVXQXTwPrjvoDPpAbLdo', // <---- API key
+    apiKey: process.env.REACT_APP_VENDIA_KEY, // <---- API key
 });
 
 const { entities } = client;

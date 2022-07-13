@@ -4,22 +4,22 @@ import {
   Route,
 } from "react-router-dom";
 import Add from "./pages/Add";
-import Employees from "./pages/Employees";
+import Delete from "./pages/Delete";
 import Home from "./pages/Home";
 import Aggregate from "./pages/Aggregate";
 import Info from "./pages/Info";
 import Secondary from "./pages/Secondary";
-
-
+import Sign from "./pages/Sign";
 
 function App() {
   return (
       <Router>
         <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Sign/>}/>
+        <Route path="/Home" element={<Home/>}/>
         <Route path="/aggregate" element={<Aggregate/>}/>
         <Route path="/add" element={<Add/>}/>
-        <Route path="/employees" element={<Employees/>}/>
+        <Route path="/delete" element={<Delete/>}/>
         <Route path="/info" element={<Info/>}/>
         <Route path="/secondary" element={<Secondary/>}/>
         </Routes>

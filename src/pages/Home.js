@@ -41,7 +41,7 @@ export default function Home() {
     <IconButton href="/add" aria-label="add" size="small">
         <AddIcon fontSize="inherit" style={{color: 'rgb(60, 179, 113)', maxWidth: '35vh', maxHeight: '35vh', minWidth: '35vh', minHeight: '35vh'}}/>
       </IconButton>
-    <IconButton href="/employees" aria-label="delete" size="small">
+    <IconButton href="/delete" aria-label="delete" size="small">
         <DeleteIcon fontSize="inherit" style={{color:'red', maxWidth: '35vh', maxHeight: '35vh', minWidth: '35vh', minHeight: '35vh'}}/>
       </IconButton>
       <IconButton href="/aggregate" aria-label="aggregate" size="small">
